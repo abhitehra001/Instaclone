@@ -8,7 +8,7 @@ import "../styles/postViewPage.css";
 const PostViewPage = () => {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:8080/posts").then(data => {
+        axios.get("https://instaclone-nodejs.onrender.com/posts").then(data => {
             console.log(data.data);
             setPosts(data.data);
         }).catch(err => {
@@ -28,7 +28,7 @@ const PostViewPage = () => {
                         <div className="posticon">...</div>
                     </div>
                     <div className="postimage">
-                        <img src={`http://localhost:8080/posts/`+post.postimage} alt={post.postimage} />
+                        <img src={`https://instaclone-nodejs.onrender.com/posts/`+post.postimage} alt={post.postimage} />
                     </div>
                     <div className="postfooter">
                         <div className="postfootertop">
