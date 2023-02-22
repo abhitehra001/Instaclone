@@ -31,7 +31,7 @@ const UploadPage = () => {
         post.append("description", data.description)
         post.append("date", getDate(data.date))
         post.append("postimage", data.postimage)
-        axios.post("http://localhost:8080/posts", post).then(res=>{console.log(res)}).catch(err=>{console.log(err)})
+        axios.post("https://instaclone-nodejs.onrender.com/posts", post).then(res=>{console.log(res)}).catch(err=>{console.log(err)})
         navigate("/postview");
     }
     return <div id="uploadPage">
