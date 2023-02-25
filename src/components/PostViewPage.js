@@ -7,13 +7,16 @@ import "../styles/postViewPage.css";
 
 const PostViewPage = () => {
     const [posts, setPosts] = useState([]);
-    useEffect(() => {
-        axios.get("https://instaclone-nodejs.onrender.com/posts").then(data => {
+    const retrievePosts = async() => {
+        await axios.get("http://localhost:8080/posts").then(data => {
             console.log(data.data);
             setPosts(data.data);
         }).catch(err => {
             console.log(err);
         })
+    }
+    useEffect(() => {
+        retrievePosts();
     }, [])
     return <div id="postViewPage">
         <Header />
