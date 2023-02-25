@@ -16,7 +16,7 @@ const PostViewPage = () => {
         })
     }
     useEffect(() => {
-        retrievePosts();
+        setTimeout(retrievePosts,2000);
     }, [])
     return <div id="postViewPage">
         <Header />
