@@ -21,9 +21,8 @@ const UploadPage = () => {
         }
     }
     const [data, setData] = useState(getInitialData());
-    const submitHandler = async(e) => {
+    const submitHandler = (e) => {
         e.preventDefault();
-        console.log(data);
         const post = new FormData()
         post.append("name", data.name)
         post.append("address", data.address)
@@ -31,7 +30,7 @@ const UploadPage = () => {
         post.append("description", data.description)
         post.append("date", getDate(data.date))
         post.append("postimage", data.postimage)
-        await axios.post("https://instaclone-nodejs.onrender.com/posts", post).then(res=>{navigate("/postview");}).catch(err=>{console.log(err)})
+        axios.post("http://localhost:8080/posts", post).then(navigate("/postview"))
     }
     return <div id="uploadPage">
         <Header />
