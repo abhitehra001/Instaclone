@@ -21,7 +21,7 @@ const UploadPage = () => {
         }
     }
     const [data, setData] = useState(getInitialData());
-    const submitHandler = async(e) => {
+    const submitHandler = (e) => {
         e.preventDefault();
         const post = new FormData()
         post.append("name", data.name)
@@ -30,7 +30,7 @@ const UploadPage = () => {
         post.append("description", data.description)
         post.append("date", getDate(data.date))
         post.append("postimage", data.postimage)
-        await axios.post("http://localhost:8080/posts", post)
+        axios.post("http://localhost:8080/posts", post)
         navigate("/postview")
     }
     return <div id="uploadPage">
