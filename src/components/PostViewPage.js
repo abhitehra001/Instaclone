@@ -45,7 +45,7 @@ const PostViewPage = () => {
                     </div>
                     <div className="postdescription">{post.description}</div>
                 </div>
-            }) : <div>No posts Yet</div>}
+            }) : <div id="waiting">Loading Please Wait...</div>}
         </div>
     </div>
 }
